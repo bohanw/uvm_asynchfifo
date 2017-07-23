@@ -6,15 +6,15 @@ class driver extends uvm_driver #(uvm_sequence_item);
 	clkSeqItem clkItem;
 	sequence_item seqItem;
 
+	//How to 
 	int writeCount;
 	int readCount;
 	function new (string name, uvm_coponent parent);
-
 		super.new(name,parent);
 	endfunction
 
 	function void build_phase(uvm_phase phase);
-		if(!uvm_config_db #(virtual fifoPorts)::get(this, "*","itf", itf))
+		if(!uvm_config_db #(virtual fifoPorts)::get(null, "*","itf", itf))
 			`uvm_fatal("DRIVER","fail to set interface");
 	endfunction
 
@@ -42,7 +42,7 @@ class driver extends uvm_driver #(uvm_sequence_item);
 			if($cast(clkItem,req)) begin
 				itf.wperiod = clkItem.wperiod;
 				itf.rperiod = clkItem.rperiod;
-				`uvm_info("Driver",$sformatf("wperiod = %d, rperiod= %d",clkItem.wperiod,clkItem.rperiod));
+				`uvm_info("Driver",$sformatf("wperiod = %d, rperiod= %d",clkItem.wperiod,clkItem.rperiod),UVM_LOW);
 
 			end
 			else begin
@@ -50,6 +50,8 @@ class driver extends uvm_driver #(uvm_sequence_item);
 					`uvm_error("Driver","unknown trasaction");
 				sendData(seqItem,phase);
 			end
+			seq_item_port.item_done();
+			$display("%t Finish trasaction.....",$time);
 		end
 	endtask : run_phase
 
@@ -62,7 +64,7 @@ class driver extends uvm_driver #(uvm_sequence_item);
 			end
 			WRITE: begin
 				this.writeCount++;
-				`uvm_info("Driver",$sformatf("%d Prepare FIFO for writing", $time));
+				`uvm_info("Driver",$sformatf("%d Prepare FIFO for writing", seqItem.wdata),UVM_LOW);
 				itf.wdata = seqItem.wdata;
 				itf.winc = seqItem.winc;
 				itf.rinc = 0;
@@ -70,7 +72,7 @@ class driver extends uvm_driver #(uvm_sequence_item);
 			end
 			READ:begin
 				this.readCount++;
-				`uvm_info("Driver",$sformatf("%d Prepare FIFO for Reading", $time));
+				`uvm_info("Driver",$sformatf("%d Prepare FIFO for Reading", seqItem.rdata),UVM_LOW);
 				itf.winc = 0;
 				itf.rinc = seqItem.rinc;
 				@(posedge itf.rclk);
@@ -79,6 +81,7 @@ class driver extends uvm_driver #(uvm_sequence_item);
 			WRITEREAD: begin
 				this.writeCount++;
 				this.readCount++;
+				`uvm_info("Driver",$sformatf("%d FIFO Reading %h Writing %h", $time, seqItem.rdata,seqItem.wdata),UVM_LOW);
 				itf.wdata = seqItem.wdata;
 				itf.winc = seqItem.winc;
 				itf.rinc = seqItem.rinc;

@@ -77,7 +77,8 @@ begin
 	uvm_config_db #(virtual fifoPorts)::set(null, "*","itf", itf);
 	uvm_config_db #(int)::set(null, "*","DEPTH", fifoVerif_pkg::DEPTH);
 	//run_test("writeResetTest");	
-	run_test("write_readTest");	
+	//run_test("write_readTest");	
+	run_test();
 	
 end
 	
