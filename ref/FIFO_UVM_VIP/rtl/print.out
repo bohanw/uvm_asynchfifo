@@ -1,0 +1,8 @@
+desktop.ini
+fifo1.v
+fifomem.v
+print.out
+rptr_empty.v
+sync_r2w.v
+sync_w2r.v
+wptr_full.v

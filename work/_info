@@ -1,0 +1,210 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/bohanw/uvm/uvm_asynchfifo
+vbin2gray
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1500406611
+!i10b 1
+!s100 L4jR>zbTKXP35OzV9z5OE3
+IB6CiJ02oWM02MHLbFSz]n0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 rptr_empty_sv_unit
+S1
+R0
+Z5 w1500406266
+Z6 8./src/rptr_empty.sv
+Z7 F./src/rptr_empty.sv
+L0 38
+Z8 OL;L;10.5c;63
+r1
+!s85 0
+31
+Z9 !s108 1500406611.000000
+Z10 !s107 ./src/fifo.sv|./src/wptr_full.sv|./src/rptr_empty.sv|./src/sync_w2r.sv|./src/sync_r2w.sv|./src/fifomem.sv|
+Z11 !s90 -f|dut.f|
+!i113 0
+Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z13 tCvgOpt 0
+vfifo
+R1
+R2
+!i10b 1
+!s100 _2h[MMSP:G6i9CCVEAch]0
+Ik4^MUHzaVL`Yc[0zk3i3a3
+R3
+!s105 fifo_sv_unit
+S1
+R0
+w1500405042
+8./src/fifo.sv
+F./src/fifo.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+vfifomem
+R1
+R2
+!i10b 1
+!s100 Q;F7lY@QSZFLahbE68i9S3
+Id=b5DF<IG3O_mNW38o<EM3
+R3
+!s105 fifomem_sv_unit
+S1
+R0
+w1499894849
+8./src/fifomem.sv
+F./src/fifomem.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+vrptr_empty
+R1
+R2
+!i10b 1
+!s100 h]bbk0]90c[GXPnWBO]8?1
+IhK]KDOb=RYU3OXz1Bl?6?0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+vsync_r2w
+R1
+R2
+!i10b 1
+!s100 SzLXW]kC=P762iEU;Ncck1
+INfYD3OAFZUic@FRBl@>Af2
+R3
+!s105 sync_r2w_sv_unit
+S1
+R0
+w1500406390
+8./src/sync_r2w.sv
+F./src/sync_r2w.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+vsync_w2r
+R1
+R2
+!i10b 1
+!s100 ?JZ[]X:3[lb<4KWGb0o_H2
+IYJ40kADk3WcE<gFU47dj63
+R3
+!s105 sync_w2r_sv_unit
+S1
+R0
+w1500406384
+8./src/sync_w2r.sv
+F./src/sync_w2r.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+vtb
+R1
+R2
+!i10b 1
+!s100 O[lk2AnW2B;foW;ngz7jl1
+ITe:3X5>nkQ0afY6EPL2dh0
+R3
+!s105 tb_sv_unit
+S1
+R0
+w1500406576
+8./tb/tb.sv
+F./tb/tb.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 ./tb/tb.sv|
+!s90 ./tb/tb.sv|
+!i113 0
+R12
+R13
+Ttop_optimized
+R2
+V0DQ^R_?`7;XI@XU16YN;B3
+04 2 4 work tb fast 0
+o+acc +cover=sbfec+fifo(rtl).
+R13
+ntop_optimized
+OL;O;10.5c;63
+vwptr_full
+R1
+R2
+!i10b 1
+!s100 AN=CNI6P>F@^3V;enkUAk2
+I[m;IcMV=nEG;57Dno_?XV2
+R3
+!s105 wptr_full_sv_unit
+S1
+R0
+w1500404617
+8./src/wptr_full.sv
+F./src/wptr_full.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13

@@ -1,0 +1,398 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/bohanw/uvm/uvm_asynchfifo/ref/FIFO_UVM_VIP
+vbindModule
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1500836535
+!i10b 1
+!s100 kGfC?76[5<UeVb50oLJFJ0
+IB0]U^NHakV6:]Y5o?K4c;1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 fifoSVA_sv_unit
+S1
+R0
+Z5 w1474740488
+Z6 8UVM_VIP/fifoSVA.sv
+Z7 FUVM_VIP/fifoSVA.sv
+L0 37
+Z8 OL;L;10.5c;63
+r1
+!s85 0
+31
+Z9 !s108 1500836534.000000
+Z10 !s107 ./UVM_VIP/tb/write_readTest.sv|./UVM_VIP/tb/writeTillFullTest.sv|./UVM_VIP/tb/writeTillFullSeq.sv|./UVM_VIP/tb/writeResetTest.sv|./UVM_VIP/tb/writeTest.sv|./UVM_VIP/tb/env.sv|./UVM_VIP/tb/scoreboard.sv|./UVM_VIP/tb/agent.sv|./UVM_VIP/tb/monitor.sv|./UVM_VIP/tb/driver.sv|./UVM_VIP/tb/sequencer.sv|./UVM_VIP/tb/readMultiplDataRstSeq.sv|./UVM_VIP/tb/readDataSeq.sv|./UVM_VIP/tb/writeMultiplDataRstSeq.sv|./UVM_VIP/tb/writeDataSeq.sv|./UVM_VIP/tb/resetSequence.sv|./UVM_VIP/tb/clkSequence.sv|./UVM_VIP/tb/clkSeqItem.sv|./UVM_VIP/tb/seqItem.sv|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|UVM_VIP/top.sv|UVM_VIP/fifoPorts.sv|UVM_VIP/fifoSVA.sv|UVM_VIP/fifoCovrg_pkg.sv|UVM_VIP/reportServer.sv|UVM_VIP/fifoVerif_pkg.svh|
+Z11 !s90 -f|tb.f|
+!i113 0
+Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z13 !s92 +incdir+./UVM_VIP/tb -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z14 tCvgOpt 0
+nbind@module
+vcheckDut
+R1
+Z15 DXx6 mtiUvm 7 uvm_pkg 0 22 oMKUklN?>LE6@MJe7=2><1
+R2
+!i10b 1
+!s100 IW`QoH^T8;:l79k=7oUh50
+If><EDb9]Ki>eaNe[D]L]U1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+Z16 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+Z17 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+Z18 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+Z19 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+Z20 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+Z21 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+Z22 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+Z23 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+Z24 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+Z25 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+Z26 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+Z27 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+L0 45
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R14
+ncheck@dut
+vfifo1
+Z28 !s110 1500836534
+!i10b 1
+!s100 J8gTMNaGC<R6;S2n6G9Ic1
+IHIH7;4nfS61bcoLdKnfLF1
+R3
+R0
+w1450560474
+8rtl/fifo1.v
+Frtl/fifo1.v
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+Z29 !s107 rtl/wptr_full.v|rtl/sync_w2r.v|rtl/sync_r2w.v|rtl/rptr_empty.v|rtl/fifomem.v|rtl/fifo1.v|
+Z30 !s90 -f|dut.f|
+!i113 0
+R12
+R14
+XfifoCovrg_pkg
+Z31 !s115 fifoPorts
+R1
+R2
+!i10b 1
+!s100 Joo8YhWLIkL;9jIAb^UPN3
+I3Rnhb2;oPjYg74h>RSao<2
+V3Rnhb2;oPjYg74h>RSao<2
+S1
+R0
+w1474740498
+8UVM_VIP/fifoCovrg_pkg.sv
+FUVM_VIP/fifoCovrg_pkg.sv
+Z32 L0 38
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R14
+nfifo@covrg_pkg
+vfifomem
+R28
+!i10b 1
+!s100 dcO9ki9F:Ea>GH^EY:K_?0
+IM9>h^;P0Yc_`BN;MnK3>;0
+R3
+R0
+w1434591066
+8rtl/fifomem.v
+Frtl/fifomem.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R29
+R30
+!i113 0
+R12
+R14
+YfifoPorts
+R1
+R2
+!i10b 1
+!s100 _GRfX?75Q7J8;kz<enZ^d0
+Id;iLQogiT[C[MPRJ5EHkL0
+R3
+!s105 fifoPorts_sv_unit
+S1
+R0
+w1474740494
+8UVM_VIP/fifoPorts.sv
+FUVM_VIP/fifoPorts.sv
+R32
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R14
+nfifo@ports
+XfifoVerif_pkg
+R31
+R1
+R15
+R28
+!i10b 1
+!s100 L2DigbRI^4Cn0Fac6:4h43
+I684d=j2CUd^Fl0EF;?<aF0
+V684d=j2CUd^Fl0EF;?<aF0
+S1
+R0
+w1500670045
+8UVM_VIP/fifoVerif_pkg.svh
+FUVM_VIP/fifoVerif_pkg.svh
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+F./UVM_VIP/tb/seqItem.sv
+F./UVM_VIP/tb/clkSeqItem.sv
+F./UVM_VIP/tb/clkSequence.sv
+F./UVM_VIP/tb/resetSequence.sv
+F./UVM_VIP/tb/writeDataSeq.sv
+F./UVM_VIP/tb/writeMultiplDataRstSeq.sv
+F./UVM_VIP/tb/readDataSeq.sv
+F./UVM_VIP/tb/readMultiplDataRstSeq.sv
+F./UVM_VIP/tb/sequencer.sv
+F./UVM_VIP/tb/driver.sv
+F./UVM_VIP/tb/monitor.sv
+F./UVM_VIP/tb/agent.sv
+F./UVM_VIP/tb/scoreboard.sv
+F./UVM_VIP/tb/env.sv
+F./UVM_VIP/tb/writeTest.sv
+F./UVM_VIP/tb/writeResetTest.sv
+F./UVM_VIP/tb/writeTillFullSeq.sv
+F./UVM_VIP/tb/writeTillFullTest.sv
+F./UVM_VIP/tb/write_readTest.sv
+R32
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R14
+nfifo@verif_pkg
+XownMessaging
+R1
+R15
+R2
+!i10b 1
+!s100 eYXFB9Ah3n_3DDK5Gl_m73
+I_@AEC17[@;G1e612H`;gm0
+V_@AEC17[@;G1e612H`;gm0
+S1
+R0
+w1474740474
+8UVM_VIP/reportServer.sv
+FUVM_VIP/reportServer.sv
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+R32
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R14
+nown@messaging
+vrptr_empty
+R28
+!i10b 1
+!s100 4fe:6KU5>]YU;4g51cSSY1
+I3IXIea[E<@Ienzll8PUfM2
+R3
+R0
+w1434591094
+8rtl/rptr_empty.v
+Frtl/rptr_empty.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R29
+R30
+!i113 0
+R12
+R14
+vsync_r2w
+R28
+!i10b 1
+!s100 nUBS]cO;6OdIQHbY5V7lG2
+Io308L;THhK44PULaET__G1
+R3
+R0
+w1434591084
+8rtl/sync_r2w.v
+Frtl/sync_r2w.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R29
+R30
+!i113 0
+R12
+R14
+vsync_w2r
+R28
+!i10b 1
+!s100 db32imTnDmHeO^AQe[VjU0
+I`1aILeRRd:Qn:;4d``T6T1
+R3
+R0
+w1434591090
+8rtl/sync_w2r.v
+Frtl/sync_w2r.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R29
+R30
+!i113 0
+R12
+R14
+vtop
+R1
+R15
+DXx4 work 13 fifoVerif_pkg 0 22 684d=j2CUd^Fl0EF;?<aF0
+DXx4 work 12 ownMessaging 0 22 _@AEC17[@;G1e612H`;gm0
+DXx4 work 13 fifoCovrg_pkg 0 22 3Rnhb2;oPjYg74h>RSao<2
+R2
+!i10b 1
+!s100 XeRoi;Wo5GeMB6ab=Afl81
+IXh?>XeS]<ZR@gD94_cWWM0
+R3
+!s105 top_sv_unit
+S1
+R0
+w1500509532
+8UVM_VIP/top.sv
+FUVM_VIP/top.sv
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+R32
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R14
+Ttop_optimized
+!s110 1500836536
+V5Qdj]?7U0T;<mQYghoDaH1
+04 3 4 work top fast 0
+o+acc +cover=sbfec+fifo1(rtl)
+R14
+ntop_optimized
+OL;O;10.5c;63
+vwptr_full
+R28
+!i10b 1
+!s100 NQcDYGWd1VEg;mC2dH_0C2
+IMVnFR;9eL@:P[Y0eEnMb=0
+R3
+R0
+w1457583548
+8rtl/wptr_full.v
+Frtl/wptr_full.v
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+R29
+R30
+!i113 0
+R12
+R14
