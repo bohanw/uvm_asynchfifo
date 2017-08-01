@@ -1,3 +1,5 @@
+	`include "uvm_macros.svh"
+	import uvm_pkg::*;
 class driver extends uvm_driver #(uvm_sequence_item);
 	`uvm_component_utils(driver)
 
@@ -9,12 +11,13 @@ class driver extends uvm_driver #(uvm_sequence_item);
 	//How to 
 	int writeCount;
 	int readCount;
-	function new (string name, uvm_coponent parent);
+
+	function new (string name, uvm_component parent);
 		super.new(name,parent);
 	endfunction
 
 	function void build_phase(uvm_phase phase);
-		if(!uvm_config_db #(virtual fifoPorts)::get(null, "*","itf", itf))
+		if(!uvm_config_db #(virtual fifo_interface)::get(null, "*","itf", itf))
 			`uvm_fatal("DRIVER","fail to set interface");
 	endfunction
 

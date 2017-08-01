@@ -1,9 +1,10 @@
 module top();
 	import uvm_pkg::*;
+	`include "uvm_macros.svh";
 	import fifo_pkg::*;
 
 
-	`include "uvm_macros.svh";
+	
 
 	fifo_interface itf();
 
@@ -15,8 +16,10 @@ module top();
 			.wfull (itf.wfull),.rempty(itf.rempty));
 
 	initial begin
-		uvm_config_db#()::set(null, "*", "itf", itf);
+		uvm_config_db#(virtual fifo_interface)::set(null, "*", "itf", itf);
+		uvm_config_db#(int)::set(null, "*", "DEPTH",fifo_pkg::DEPTH);
 		//run_test("");
+		run_test();
 	end
 
 

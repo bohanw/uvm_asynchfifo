@@ -50,13 +50,13 @@ endfunction
 
 
 function void build_phase (uvm_phase phase); 
- agent_inst = agent::type_id::create("agent_inst",this);
-    scoreboard_inst =scoreboard::type_id::create("scoreboard_inst", this);
+	agent_inst = agent::type_id::create("agent_inst",this);
+	scoreboard_inst =scoreboard::type_id::create("scoreboard_inst", this);
 endfunction
 
 function void connect_phase (uvm_phase phase); 
- agent_inst.outMonitor_inst.writeDataSend_port.connect(scoreboard_inst.port_write);
- agent_inst.outMonitor_inst.readDataSend_port.connect(scoreboard_inst.port_read);
+	agent_inst.outMonitor_inst.writeDataSend_port.connect(scoreboard_inst.port_write);
+	agent_inst.outMonitor_inst.readDataSend_port.connect(scoreboard_inst.port_read);
 endfunction
 
 endclass

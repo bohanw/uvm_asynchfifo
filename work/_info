@@ -10,7 +10,7 @@ cModel Technology
 Z0 d/home/bohanw/uvm/uvm_asynchfifo
 vbin2gray
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1500406611
+Z2 !s110 1501551208
 !i10b 1
 !s100 L4jR>zbTKXP35OzV9z5OE3
 IB6CiJ02oWM02MHLbFSz]n0
@@ -26,7 +26,7 @@ Z8 OL;L;10.5c;63
 r1
 !s85 0
 31
-Z9 !s108 1500406611.000000
+Z9 !s108 1501551208.000000
 Z10 !s107 ./src/fifo.sv|./src/wptr_full.sv|./src/rptr_empty.sv|./src/sync_w2r.sv|./src/sync_r2w.sv|./src/fifomem.sv|
 Z11 !s90 -f|dut.f|
 !i113 0
@@ -55,6 +55,93 @@ R10
 R11
 !i113 0
 R12
+R13
+Yfifo_interface
+R1
+Z14 DXx6 mtiUvm 7 uvm_pkg 0 22 oMKUklN?>LE6@MJe7=2><1
+Z15 !s110 1501551209
+!i10b 1
+!s100 9dg?0Xff;`Cg=^F5XVRT=1
+ITSmbE4SG^CNmoMGFWQ2]D3
+R3
+!s105 fifo_interface_sv_unit
+S1
+R0
+w1501296849
+8fifo_interface.sv
+Ffifo_interface.sv
+Z16 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+Z17 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+Z18 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+Z19 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+Z20 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+Z21 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+Z22 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+Z23 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+Z24 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+Z25 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+Z26 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+Z27 F/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+Z28 !s107 tb/writeTest.sv|tb/env.sv|tb/scoreboard.sv|tb/agent.sv|tb/rd_monitor.sv|tb/wr_monitor.sv|tb/driver.sv|tb/sequencer.sv|tb/writeSeq.sv|tb/clkSeq.sv|tb/sequence_item.sv|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|top.sv|fifo_interface.sv|fifo_pkg.sv|
+Z29 !s90 -f|tb.f|
+!i113 0
+R12
+Z30 !s92 +incdir+tb -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R13
+Xfifo_pkg
+!s115 fifo_interface
+R1
+R14
+R15
+!i10b 1
+!s100 UIIFfTC>L;RKeCGk<m=aE3
+IMgF@ZGN4>aBc;IJLUO=QA3
+VMgF@ZGN4>aBc;IJLUO=QA3
+S1
+R0
+w1501551203
+8fifo_pkg.sv
+Ffifo_pkg.sv
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+Ftb/sequence_item.sv
+Ftb/clkSeq.sv
+Ftb/writeSeq.sv
+Ftb/sequencer.sv
+Ftb/driver.sv
+Ftb/wr_monitor.sv
+Ftb/rd_monitor.sv
+Ftb/agent.sv
+Ftb/scoreboard.sv
+Ftb/env.sv
+Ftb/writeTest.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R28
+R29
+!i113 0
+R12
+R30
 R13
 vfifomem
 R1
@@ -152,34 +239,49 @@ R11
 !i113 0
 R12
 R13
-vtb
+vtop
 R1
-R2
+R14
+DXx4 work 8 fifo_pkg 0 22 MgF@ZGN4>aBc;IJLUO=QA3
+R15
 !i10b 1
-!s100 O[lk2AnW2B;foW;ngz7jl1
-ITe:3X5>nkQ0afY6EPL2dh0
+!s100 6WNzY^9mBF4?j[__^l9]_3
+I3KZFXo4O8Hk8JK9[Goz[_1
 R3
-!s105 tb_sv_unit
+!s105 top_sv_unit
 S1
 R0
-w1500406576
-8./tb/tb.sv
-F./tb/tb.sv
+w1501548333
+8top.sv
+Ftop.sv
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
 L0 1
 R8
 r1
 !s85 0
 31
 R9
-!s107 ./tb/tb.sv|
-!s90 ./tb/tb.sv|
+R28
+R29
 !i113 0
 R12
+R30
 R13
 Ttop_optimized
-R2
-V0DQ^R_?`7;XI@XU16YN;B3
-04 2 4 work tb fast 0
+!s110 1501551210
+V2:FZ]>=If4cMzL>YZTh[G2
+04 3 4 work top fast 0
 o+acc +cover=sbfec+fifo(rtl).
 R13
 ntop_optimized

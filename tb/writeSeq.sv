@@ -1,11 +1,15 @@
+	`include "uvm_macros.svh"
+	import uvm_pkg::*;
 class writeSeq extends uvm_sequence #(sequence_item);
 	`uvm_object_utils(writeSeq)
 
 	rand int writeCount;
 	sequence_item command;
 
-	constraint writeCountCnstr {writeCount > 0;
-								writeCount < 8;}; // How to pass the writeCount
+	constraint writeCountCnstr {
+		writeCount > 0;
+		writeCount < 8;
+	}; // How to pass the writeCount
 												 //upperboundary as DATASIZE
 												 //param
 

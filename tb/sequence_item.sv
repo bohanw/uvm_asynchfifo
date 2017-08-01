@@ -1,5 +1,7 @@
+	`include "uvm_macros.svh"
+	import uvm_pkg::*;
 class sequence_item extends uvm_sequence_item;
-	`uvm_object_utils(sequence_item);
+	`uvm_object_utils(sequence_item)
 
 	rand logic [7:0] wdata;
 	logic wfull,rempty;
@@ -7,7 +9,13 @@ class sequence_item extends uvm_sequence_item;
 
 	logic winc,rinc,wrst_n,rrst_n;
 
-	constraint data {wdata dist{8'h00:=1,[8'h01:8'hFE] := 1,8'hFF:=1}};
+	constraint data { 
+		wdata dist {
+			8'h00:=1,
+			[8'h01:8'hFE]:=1,
+			8'hFF:=1
+		};
+	};
 
 
 	fifo_pkg::operation_t  op;
@@ -50,7 +58,7 @@ class sequence_item extends uvm_sequence_item;
 			(test.rinc == rinc) && 
 			(test.rrst_n == rrst_n) &&
 			(test.wrst_n == wrst_n);
-		return same
+		return same;
 	endfunction
 	
 	function string convert2String();
@@ -59,3 +67,4 @@ class sequence_item extends uvm_sequence_item;
 		return s;
 	endfunction
 endclass
+
