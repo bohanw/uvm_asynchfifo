@@ -19,15 +19,16 @@ class scoreboard extends uvm_scoreboard;
 	function new(string name="scoreboard",uvm_component parent);
 		super.new(name,parent);
 		this.fifoWrCount = 0;
-		//if(!uvm_config_db#(int)::get(null, "*", "DEPTH",fifo_depth ))
-		//	`uvm_error("scoreboard","FAIL TO GET DEPTH");
+		if(!uvm_config_db#(int)::get(null, "*", "DEPTH",fifo_depth ))
+			`uvm_error("scoreboard","FAIL TO GET DEPTH");
 	endfunction : new
 
 	function void build_phase(uvm_phase phase);
 		port_read = new("port_read",this);
 		port_write = new("port_write",this);
-		if(!uvm_config_db#(int)::get(null, "*", "DEPTH",fifo_depth ))
-			`uvm_error("scoreboard","fail to get depth");
+		//if(!uvm_config_db#(int)::get(null, "*", "DEPTH",fifo_depth ))
+		//	`uvm_error("scoreboard","fail to get depth");
+		wrDataFifo = new("wrDataFifo",this, fifo_depth);
 	endfunction : build_phase
 
 
@@ -45,7 +46,10 @@ class scoreboard extends uvm_scoreboard;
 				`uvm_info("scoreboard",$sformatf("***PASS**** FIFO wfull signal functions"),UVM_LOW);
 			end
 		end
+		else begin
+			`uvm_info("scoreboard",$sformatf("FIFO write status: write performed = %d, fifo size = %d",this.fifoWrCount,this.fifo_depth),UVM_LOW);
 
+		end
 		if(wrDataFifo.can_put())begin
 			sequence_item tr_cp;
 			tr_cp = sequence_item::type_id::create("tr_cp",this);

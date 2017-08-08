@@ -1,5 +1,4 @@
-	`include "uvm_macros.svh"
-	import uvm_pkg::*;
+
 class writeSeq extends uvm_sequence #(sequence_item);
 	`uvm_object_utils(writeSeq)
 
@@ -7,7 +6,7 @@ class writeSeq extends uvm_sequence #(sequence_item);
 	sequence_item command;
 
 	constraint writeCountCnstr {
-		writeCount > 0;
+		writeCount > 1;
 		writeCount < 8;
 	}; // How to pass the writeCount
 												 //upperboundary as DATASIZE
@@ -20,11 +19,15 @@ class writeSeq extends uvm_sequence #(sequence_item);
 
 	task body();
 		command = sequence_item::type_id::create("command");
-		$display("%t: ++++++++++++ writeDataSeq: Number of writes= %d",
-		$time,writeCount);
-		
-		repeat(writeCount) begin
+		//$display("%t: ++++++++++++ writeDataSeq: Number of writes= %d",
+		//$time,writeCount);
+		`uvm_info("WRITESEQ",$sformatf("%t, write sequence : Number of writes = %d",$time, writeCount),UVM_MEDIUM);
+		start_item(command);
+		command.op = RESET;
+		finish_item(command);
+		repeat(10) begin
 			start_item(command);
+			void' (command.randomize());
 			command.op = WRITE;
 			command.winc = 1;
 			finish_item(command);

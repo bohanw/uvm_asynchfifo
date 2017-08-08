@@ -24,7 +24,7 @@ class driver extends uvm_driver #(uvm_sequence_item);
 	//reset phase of the RUN PHASE
 	task reset (uvm_phase phase);
 		//phase.raise_objection(this);
-
+		$display ("%t : Driver Running Reset... ", $time);
 		itf.wrst_n = 1'b0;
 		itf.rrst_n = 1'b0;
 
@@ -35,18 +35,21 @@ class driver extends uvm_driver #(uvm_sequence_item);
 		itf.wrst_n = 1;
 		itf.rrst_n = 1;
 		//phase.drop_objection(this);
+		$display ("%t : Driver Finish Running Reset...", $time);
 	endtask
 
 	task run_phase(uvm_phase phase);
 
-		reset(phase);
+		//clkItem = clkSeqItem::type_id::create("clkItem");
+		//seqItem = sequence_item::type_id::create("seqItem");
+		
 		forever begin 
 			seq_item_port.get_next_item(req);
 			if($cast(clkItem,req)) begin
 				itf.wperiod = clkItem.wperiod;
 				itf.rperiod = clkItem.rperiod;
 				`uvm_info("Driver",$sformatf("wperiod = %d, rperiod= %d",clkItem.wperiod,clkItem.rperiod),UVM_LOW);
-
+				reset(phase);
 			end
 			else begin
 				if(!$cast(seqItem,req))
@@ -66,12 +69,15 @@ class driver extends uvm_driver #(uvm_sequence_item);
 				reset(phase);
 			end
 			WRITE: begin
+
+
 				this.writeCount++;
+				itf.wdata <= seqItem.wdata;
+				itf.winc <= seqItem.winc;
+				itf.rinc <= 0;
 				`uvm_info("Driver",$sformatf("%d Prepare FIFO for writing", seqItem.wdata),UVM_LOW);
-				itf.wdata = seqItem.wdata;
-				itf.winc = seqItem.winc;
-				itf.rinc = 0;
-				@(posedge itf.wclk);	
+				@ (posedge itf.wclk);
+	
 			end
 			READ:begin
 				this.readCount++;

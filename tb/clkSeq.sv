@@ -5,15 +5,16 @@
 class clkSeqItem extends uvm_sequence_item;
 	`uvm_object_utils(clkSeqItem);
 
-	rand int wperiod;
-	rand int rperiod;
+	int wperiod  = 8;
+	int rperiod = 5 ;
 
+	
 	constraint period {
 		wperiod > 0;
 		wperiod < 10;
 		rperiod > 0;
 		rperiod > 10;
-	};
+	}; 
 
 		function new (string name="clkSeqItem");
 			super.new(name);
@@ -26,9 +27,7 @@ class clkSeq extends uvm_sequence #(clkSeqItem);
 	`uvm_object_utils(clkSeq)
 
 	function new (string name="clkSeq");
-
 		super.new(name);
-
 	endfunction
 
 	task body;

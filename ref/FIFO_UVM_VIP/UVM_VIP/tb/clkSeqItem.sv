@@ -38,10 +38,9 @@
 class clkSeqItem extends uvm_sequence_item;
 `uvm_object_utils(clkSeqItem)
 
- rand int wperiod ;
+ rand int wperiod;
  rand int rperiod ;
 
-rand int a;
 constraint pos {
 	wperiod >0;
 	wperiod <10;
