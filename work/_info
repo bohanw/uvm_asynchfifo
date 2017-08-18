@@ -10,7 +10,7 @@ cModel Technology
 Z0 d/home/bohanw/uvm/uvm_asynchfifo
 vbin2gray
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1503075350
+Z2 !s110 1503080428
 !i10b 1
 !s100 L4jR>zbTKXP35OzV9z5OE3
 IB6CiJ02oWM02MHLbFSz]n0
@@ -26,7 +26,7 @@ Z8 OL;L;10.5c;63
 r1
 !s85 0
 31
-Z9 !s108 1503075350.000000
+Z9 !s108 1503080428.000000
 Z10 !s107 ./src/fifo.sv|./src/wptr_full.sv|./src/rptr_empty.sv|./src/sync_w2r.sv|./src/sync_r2w.sv|./src/fifomem.sv|
 Z11 !s90 -f|dut.f|
 !i113 0
@@ -59,7 +59,7 @@ R13
 Yfifo_interface
 R1
 Z14 DXx6 mtiUvm 7 uvm_pkg 0 22 oMKUklN?>LE6@MJe7=2><1
-Z15 !s110 1503075351
+Z15 !s110 1503080429
 !i10b 1
 !s100 RVEQEhY@zYdmn81?VCHZo2
 IZ3oc?TJ<A5B:]R8;ciYb70
@@ -88,7 +88,7 @@ r1
 !s85 0
 31
 R9
-Z28 !s107 tb/writeFullTest.sv|tb/writeTest.sv|tb/env.sv|tb/scoreboard.sv|tb/agent.sv|tb/rd_monitor.sv|tb/wr_monitor.sv|tb/driver.sv|tb/sequencer.sv|tb/writeFullSeq.sv|tb/writeSeq.sv|tb/resetSeq.sv|tb/clkSeq.sv|tb/sequence_item.sv|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|top.sv|fifo_interface.sv|fifo_pkg.sv|
+Z28 !s107 tb/writeReadTest.sv|tb/writeFullTest.sv|tb/writeTest.sv|tb/env.sv|tb/scoreboard.sv|tb/agent.sv|tb/rd_monitor.sv|tb/wr_monitor.sv|tb/driver.sv|tb/sequencer.sv|tb/readSeq.sv|tb/writeFullSeq.sv|tb/writeSeq.sv|tb/resetSeq.sv|tb/clkSeq.sv|tb/sequence_item.sv|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|top.sv|fifo_interface.sv|fifo_pkg.sv|
 Z29 !s90 -f|tb.f|
 !i113 0
 R12
@@ -100,12 +100,12 @@ R1
 R14
 R15
 !i10b 1
-!s100 aE:l]`TUgi]R2Xhl<I`b<1
-Ing]SBFMKAYBNfJ2Z<D_o10
-Vng]SBFMKAYBNfJ2Z<D_o10
+!s100 T4Whz>:[:G67Lj@?>mI1j3
+IJBkBS:>KG9=cDK@S1ol=F1
+VJBkBS:>KG9=cDK@S1ol=F1
 S1
 R0
-w1503075344
+w1503080421
 8fifo_pkg.sv
 Ffifo_pkg.sv
 R16
@@ -125,6 +125,7 @@ Ftb/clkSeq.sv
 Ftb/resetSeq.sv
 Ftb/writeSeq.sv
 Ftb/writeFullSeq.sv
+Ftb/readSeq.sv
 Ftb/sequencer.sv
 Ftb/driver.sv
 Ftb/wr_monitor.sv
@@ -134,6 +135,7 @@ Ftb/scoreboard.sv
 Ftb/env.sv
 Ftb/writeTest.sv
 Ftb/writeFullTest.sv
+Ftb/writeReadTest.sv
 L0 1
 R8
 r1
@@ -245,11 +247,11 @@ R13
 vtop
 R1
 R14
-DXx4 work 8 fifo_pkg 0 22 ng]SBFMKAYBNfJ2Z<D_o10
-R15
+DXx4 work 8 fifo_pkg 0 22 JBkBS:>KG9=cDK@S1ol=F1
+Z31 !s110 1503080430
 !i10b 1
 !s100 6WNzY^9mBF4?j[__^l9]_3
-I@;K<Y2hOd9nb_T`zE?a9A2
+IRlnfj>E8oUZ;4aH>IOKYU1
 R3
 !s105 top_sv_unit
 S1
@@ -282,8 +284,8 @@ R12
 R30
 R13
 Ttop_optimized
-!s110 1503075352
-VjI67VQE_>dVc>bl?QNCXR2
+R31
+V99D:o2ORW^:F=SWQFUl7;2
 04 3 4 work top fast 0
 o+acc +cover=sbfec+fifo(rtl).
 R13

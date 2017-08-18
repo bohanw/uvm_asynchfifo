@@ -25,7 +25,7 @@ class rd_monitor extends uvm_monitor;
 		forever begin
 			@(posedge itf.rclk);
 			if(itf.rinc && itf.rrst_n) begin 
-				$display("$t: reading data, transactions and sending: rdata = %h, rempty = %h",$time,itf.rdata,itf.rempty);
+				$display("$t: reading data, transactions and sending: rdata = %h, rempty = %b",$time,itf.rdata,itf.rempty);
 				rdSeqItem.rdata = itf.rdata;
 				rdSeqItem.rempty = itf.rempty;
 				rd_ap.write(rdSeqItem);

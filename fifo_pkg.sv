@@ -20,6 +20,7 @@ package fifo_pkg;
 	`include "resetSeq.sv"
 	`include "writeSeq.sv"
 	`include "writeFullSeq.sv"
+	`include "readSeq.sv"
 	`include "sequencer.sv"
 	`include "driver.sv"
 	`include "wr_monitor.sv"
@@ -30,4 +31,5 @@ package fifo_pkg;
 	`include "env.sv"
 	`include "writeTest.sv"
 	`include "writeFullTest.sv"
+	`include "writeReadTest.sv"
 endpackage

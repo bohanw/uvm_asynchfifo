@@ -1,6 +1,6 @@
 # do run.do
 # Model Technology ModelSim SE-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
-# Start time: 12:55:50 on Aug 18,2017
+# Start time: 14:20:28 on Aug 18,2017
 # vlog -f dut.f 
 # -- Compiling module fifomem
 # -- Compiling module sync_r2w
@@ -12,10 +12,10 @@
 # 
 # Top level modules:
 # 	fifo
-# End time: 12:55:50 on Aug 18,2017, Elapsed time: 0:00:00
+# End time: 14:20:28 on Aug 18,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
-# Start time: 12:55:50 on Aug 18,2017
+# Start time: 14:20:28 on Aug 18,2017
 # vlog -f tb.f 
 # -- Compiling package fifo_pkg
 # ** Note: (vlog-2286) fifo_pkg.sv(2): Using implicit +incdir+/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
@@ -26,10 +26,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 12:55:51 on Aug 18,2017, Elapsed time: 0:00:01
+# End time: 14:20:30 on Aug 18,2017, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vopt 10.5c Compiler 2016.07 Jul 20 2016
-# Start time: 12:55:51 on Aug 18,2017
+# Start time: 14:20:30 on Aug 18,2017
 # vopt top -o top_optimized "+acc" "+cover=sbfec+fifo(rtl)." 
 # 
 # Top level modules:
@@ -63,10 +63,10 @@
 # -- Optimizing package fifo_pkg(fast)
 # -- Optimizing interface fifo_interface(fast)
 # Optimized design name is top_optimized
-# End time: 12:55:58 on Aug 18,2017, Elapsed time: 0:00:07
+# End time: 14:20:34 on Aug 18,2017, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 0
-# vsim top_optimized -coverage "+UVM_TESTNAME=writeFullTest" 
-# Start time: 12:55:58 on Aug 18,2017
+# vsim top_optimized -coverage "+UVM_TESTNAME=writeReadTest" 
+# Start time: 14:20:35 on Aug 18,2017
 # //  ModelSim SE-64 10.5c Jul 20 2016Linux 3.10.0-693.el7.x86_64
 # //
 # //  Copyright 1991-2016 Mentor Graphics Corporation
@@ -118,130 +118,406 @@
 # 
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
-# UVM_INFO @ 0: reporter [RNTST] Running test writeFullTest...
-# wperiod           8 rperiod           5
-# UVM_INFO tb/driver.sv(51) @ 0: uvm_test_top.env_h.agent_h.driver_h [Driver] wperiod =           8, rperiod=           5
+# UVM_INFO @ 0: reporter [RNTST] Running test writeReadTest...
+# wperiod           8 rperiod           6
+# UVM_INFO tb/driver.sv(51) @ 0: uvm_test_top.env_h.agent_h.driver_h [Driver] wperiod =           8, rperiod=           6
 #                    0 : Driver Running Reset... 
 #                    4:monitor FIFO not writing
 # $t FIFO not reading                   5
-#                   30 : Driver Finish Running Reset...
-#                   30 Finish trasaction.....
+#                   35 : Driver Finish Running Reset...
+#                   35 Finish trasaction.....
+# UVM_INFO tb/writeSeq.sv(29) @ 35: uvm_test_top.env_h.agent_h.sequencer_h@@wr [WRITESEQ]                   35, write sequence : Number of writes =          10
 # RESET in effect......
-#                   30 : Driver Running Reset... 
-# $t FIFO not reading                  35
+#                   35 : Driver Running Reset... 
 #                   36:monitor FIFO not writing
-#                   70 : Driver Finish Running Reset...
-#                   70 Finish trasaction.....
-# UVM_INFO tb/driver.sv(78) @ 70: uvm_test_top.env_h.agent_h.driver_h [Driver] 254 Prepare FIFO for writing
-# $t FIFO not reading                  75
+# $t FIFO not reading                  41
+#                   71 : Driver Finish Running Reset...
+#                   71 Finish trasaction.....
+# UVM_INFO tb/driver.sv(78) @ 71: uvm_test_top.env_h.agent_h.driver_h [Driver]  91 Prepare FIFO for writing
+# $t FIFO not reading                  77
 #                   84 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 84: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           1 data = fe
+# UVM_INFO tb/scoreboard.sv(37) @ 84: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           1 data = 5b
 # UVM_INFO tb/scoreboard.sv(50) @ 84: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           1, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=fe, tr.wdata=fe
-# UVM_INFO tb/driver.sv(78) @ 84: uvm_test_top.env_h.agent_h.driver_h [Driver]  79 Prepare FIFO for writing
+# scoreboard: Transaction copied: tr_cp.wdata=5b, tr.wdata=5b
+# UVM_INFO tb/driver.sv(78) @ 84: uvm_test_top.env_h.agent_h.driver_h [Driver] 166 Prepare FIFO for writing
 #                  100 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 100: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           2 data = 4f
+# UVM_INFO tb/scoreboard.sv(37) @ 100: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           2 data = a6
 # UVM_INFO tb/scoreboard.sv(50) @ 100: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           2, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=4f, tr.wdata=4f
-# UVM_INFO tb/driver.sv(78) @ 100: uvm_test_top.env_h.agent_h.driver_h [Driver] 200 Prepare FIFO for writing
+# scoreboard: Transaction copied: tr_cp.wdata=a6, tr.wdata=a6
+# UVM_INFO tb/driver.sv(78) @ 100: uvm_test_top.env_h.agent_h.driver_h [Driver]  66 Prepare FIFO for writing
 #                  116 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 116: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           3 data = c8
+# UVM_INFO tb/scoreboard.sv(37) @ 116: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           3 data = 42
 # UVM_INFO tb/scoreboard.sv(50) @ 116: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           3, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=c8, tr.wdata=c8
-# UVM_INFO tb/driver.sv(78) @ 116: uvm_test_top.env_h.agent_h.driver_h [Driver] 188 Prepare FIFO for writing
+# scoreboard: Transaction copied: tr_cp.wdata=42, tr.wdata=42
+# UVM_INFO tb/driver.sv(78) @ 116: uvm_test_top.env_h.agent_h.driver_h [Driver] 167 Prepare FIFO for writing
 #                  132 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 132: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           4 data = bc
+# UVM_INFO tb/scoreboard.sv(37) @ 132: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           4 data = a7
 # UVM_INFO tb/scoreboard.sv(50) @ 132: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           4, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=bc, tr.wdata=bc
-# UVM_INFO tb/driver.sv(78) @ 132: uvm_test_top.env_h.agent_h.driver_h [Driver] 205 Prepare FIFO for writing
+# scoreboard: Transaction copied: tr_cp.wdata=a7, tr.wdata=a7
+# UVM_INFO tb/driver.sv(78) @ 132: uvm_test_top.env_h.agent_h.driver_h [Driver] 152 Prepare FIFO for writing
 #                  148 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 148: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           5 data = cd
+# UVM_INFO tb/scoreboard.sv(37) @ 148: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           5 data = 98
 # UVM_INFO tb/scoreboard.sv(50) @ 148: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           5, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=cd, tr.wdata=cd
-# UVM_INFO tb/driver.sv(78) @ 148: uvm_test_top.env_h.agent_h.driver_h [Driver]  95 Prepare FIFO for writing
+# scoreboard: Transaction copied: tr_cp.wdata=98, tr.wdata=98
+# UVM_INFO tb/driver.sv(78) @ 148: uvm_test_top.env_h.agent_h.driver_h [Driver]   8 Prepare FIFO for writing
 #                  164 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 164: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           6 data = 5f
+# UVM_INFO tb/scoreboard.sv(37) @ 164: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           6 data = 08
 # UVM_INFO tb/scoreboard.sv(50) @ 164: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           6, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=5f, tr.wdata=5f
-# UVM_INFO tb/driver.sv(78) @ 164: uvm_test_top.env_h.agent_h.driver_h [Driver]  31 Prepare FIFO for writing
+# scoreboard: Transaction copied: tr_cp.wdata=08, tr.wdata=08
+# UVM_INFO tb/driver.sv(78) @ 164: uvm_test_top.env_h.agent_h.driver_h [Driver]  60 Prepare FIFO for writing
 #                  180 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 180: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           7 data = 1f
+# UVM_INFO tb/scoreboard.sv(37) @ 180: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           7 data = 3c
 # UVM_INFO tb/scoreboard.sv(50) @ 180: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           7, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=1f, tr.wdata=1f
-# UVM_INFO tb/driver.sv(78) @ 180: uvm_test_top.env_h.agent_h.driver_h [Driver] 133 Prepare FIFO for writing
+# scoreboard: Transaction copied: tr_cp.wdata=3c, tr.wdata=3c
+# UVM_INFO tb/driver.sv(78) @ 180: uvm_test_top.env_h.agent_h.driver_h [Driver]  97 Prepare FIFO for writing
 #                  196 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 196: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           8 data = 85
+# UVM_INFO tb/scoreboard.sv(37) @ 196: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           8 data = 61
 # UVM_INFO tb/scoreboard.sv(50) @ 196: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           8, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=85, tr.wdata=85
-# UVM_INFO tb/driver.sv(78) @ 196: uvm_test_top.env_h.agent_h.driver_h [Driver] 114 Prepare FIFO for writing
+# scoreboard: Transaction copied: tr_cp.wdata=61, tr.wdata=61
+# UVM_INFO tb/driver.sv(78) @ 196: uvm_test_top.env_h.agent_h.driver_h [Driver] 160 Prepare FIFO for writing
 #                  212 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 212: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           9 data = 72
+# UVM_INFO tb/scoreboard.sv(37) @ 212: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           9 data = a0
 # UVM_INFO tb/scoreboard.sv(50) @ 212: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           9, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=72, tr.wdata=72
-# UVM_INFO tb/driver.sv(78) @ 212: uvm_test_top.env_h.agent_h.driver_h [Driver]  56 Prepare FIFO for writing
+# scoreboard: Transaction copied: tr_cp.wdata=a0, tr.wdata=a0
+# UVM_INFO tb/driver.sv(78) @ 212: uvm_test_top.env_h.agent_h.driver_h [Driver] 212 Prepare FIFO for writing
 #                  228 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 228: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          10 data = 38
+# UVM_INFO tb/scoreboard.sv(37) @ 228: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          10 data = d4
 # UVM_INFO tb/scoreboard.sv(50) @ 228: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          10, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=38, tr.wdata=38
-# UVM_INFO tb/driver.sv(78) @ 228: uvm_test_top.env_h.agent_h.driver_h [Driver]  33 Prepare FIFO for writing
+# scoreboard: Transaction copied: tr_cp.wdata=d4, tr.wdata=d4
+# Last Data
+# UVM_INFO tb/driver.sv(78) @ 228: uvm_test_top.env_h.agent_h.driver_h [Driver] 212 Prepare FIFO for writing
 #                  244 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 244: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          11 data = 21
-# UVM_INFO tb/scoreboard.sv(50) @ 244: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          11, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=21, tr.wdata=21
-# UVM_INFO tb/driver.sv(78) @ 244: uvm_test_top.env_h.agent_h.driver_h [Driver] 144 Prepare FIFO for writing
-#                  260 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 260: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          12 data = 90
-# UVM_INFO tb/scoreboard.sv(50) @ 260: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          12, fifo size =          16
+#                  244:monitor FIFO not writing
+# RESET in effect......
+#                  244 : Driver Running Reset... 
+#                  275 : Driver Finish Running Reset...
+#                  275 Finish trasaction.....
+# UVM_INFO tb/driver.sv(84) @ 275: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  276:monitor FIFO not writing
+#                  281 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 0000000000000119, rempty = 010110110
+# UVM_INFO tb/scoreboard.sv(69) @ 281: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =          10, data= 5b
+# UVM_INFO tb/scoreboard.sv(88) @ 281: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 5b read data = 5b
+# UVM_INFO tb/driver.sv(84) @ 281: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  293 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 0000000000000125, rempty = 101001100
+# UVM_INFO tb/scoreboard.sv(69) @ 293: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           9, data= a6
+# UVM_INFO tb/scoreboard.sv(88) @ 293: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = a6 read data = a6
+# UVM_INFO tb/driver.sv(84) @ 293: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  305 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 0000000000000131, rempty = 010000100
+# UVM_INFO tb/scoreboard.sv(69) @ 305: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           8, data= 42
+# UVM_INFO tb/scoreboard.sv(88) @ 305: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 42 read data = 42
+# UVM_INFO tb/driver.sv(84) @ 305: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  317 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 000000000000013d, rempty = 101001110
+# UVM_INFO tb/scoreboard.sv(69) @ 317: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           7, data= a7
+# UVM_INFO tb/scoreboard.sv(88) @ 317: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = a7 read data = a7
+# UVM_INFO tb/driver.sv(84) @ 317: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  329 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 0000000000000149, rempty = 100110000
+# UVM_INFO tb/scoreboard.sv(69) @ 329: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           6, data= 98
+# UVM_INFO tb/scoreboard.sv(88) @ 329: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 98 read data = 98
+# UVM_INFO tb/driver.sv(84) @ 329: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  341 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 0000000000000155, rempty = 000010000
+# UVM_INFO tb/scoreboard.sv(69) @ 341: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           5, data= 08
+# UVM_INFO tb/scoreboard.sv(88) @ 341: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 08 read data = 08
+# UVM_INFO tb/driver.sv(84) @ 341: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  353 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 0000000000000161, rempty = 001111000
+# UVM_INFO tb/scoreboard.sv(69) @ 353: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           4, data= 3c
+# UVM_INFO tb/scoreboard.sv(88) @ 353: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 3c read data = 3c
+# UVM_INFO tb/driver.sv(84) @ 353: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  365 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 000000000000016d, rempty = 011000010
+# UVM_INFO tb/scoreboard.sv(69) @ 365: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           3, data= 61
+# UVM_INFO tb/scoreboard.sv(88) @ 365: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 61 read data = 61
+# UVM_INFO tb/driver.sv(84) @ 365: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  377 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 0000000000000179, rempty = 101000000
+# UVM_INFO tb/scoreboard.sv(69) @ 377: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           2, data= a0
+# UVM_INFO tb/scoreboard.sv(88) @ 377: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = a0 read data = a0
+# UVM_INFO tb/driver.sv(84) @ 377: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  389 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 0000000000000185, rempty = 110101000
+# UVM_INFO tb/scoreboard.sv(69) @ 389: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           1, data= d4
+# UVM_INFO tb/scoreboard.sv(88) @ 389: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = d4 read data = d4
+# UVM_INFO tb/driver.sv(84) @ 389: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  401 Finish trasaction.....
+# $t FIFO not reading                 401
+# wperiod           4 rperiod           8
+# UVM_INFO tb/driver.sv(51) @ 401: uvm_test_top.env_h.agent_h.driver_h [Driver] wperiod =           4, rperiod=           8
+#                  401 : Driver Running Reset... 
+#                  439 : Driver Finish Running Reset...
+#                  439 Finish trasaction.....
+# UVM_INFO tb/writeSeq.sv(29) @ 439: uvm_test_top.env_h.agent_h.sequencer_h@@wr [WRITESEQ]                  439, write sequence : Number of writes =          10
+# RESET in effect......
+#                  439 : Driver Running Reset... 
+#                  444:monitor FIFO not writing
+# $t FIFO not reading                 447
+#                  471 : Driver Finish Running Reset...
+#                  471 Finish trasaction.....
+# UVM_INFO tb/driver.sv(78) @ 471: uvm_test_top.env_h.agent_h.driver_h [Driver] 183 Prepare FIFO for writing
+#                  476 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 476: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           1 data = b7
+# UVM_INFO tb/scoreboard.sv(50) @ 476: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           1, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=b7, tr.wdata=b7
+# UVM_INFO tb/driver.sv(78) @ 476: uvm_test_top.env_h.agent_h.driver_h [Driver] 145 Prepare FIFO for writing
+# $t FIFO not reading                 479
+#                  484 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 484: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           2 data = 91
+# UVM_INFO tb/scoreboard.sv(50) @ 484: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           2, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=91, tr.wdata=91
+# UVM_INFO tb/driver.sv(78) @ 484: uvm_test_top.env_h.agent_h.driver_h [Driver] 237 Prepare FIFO for writing
+#                  492 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 492: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           3 data = ed
+# UVM_INFO tb/scoreboard.sv(50) @ 492: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           3, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=ed, tr.wdata=ed
+# UVM_INFO tb/driver.sv(78) @ 492: uvm_test_top.env_h.agent_h.driver_h [Driver] 243 Prepare FIFO for writing
+#                  500 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 500: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           4 data = f3
+# UVM_INFO tb/scoreboard.sv(50) @ 500: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           4, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=f3, tr.wdata=f3
+# UVM_INFO tb/driver.sv(78) @ 500: uvm_test_top.env_h.agent_h.driver_h [Driver] 190 Prepare FIFO for writing
+#                  508 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 508: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           5 data = be
+# UVM_INFO tb/scoreboard.sv(50) @ 508: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           5, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=be, tr.wdata=be
+# UVM_INFO tb/driver.sv(78) @ 508: uvm_test_top.env_h.agent_h.driver_h [Driver] 107 Prepare FIFO for writing
+#                  516 Finish trasaction.....
+#                  516 FIFO is full, write count == DEPTH =          16
+# UVM_INFO tb/driver.sv(78) @ 516: uvm_test_top.env_h.agent_h.driver_h [Driver] 165 Prepare FIFO for writing
+#                  520 wfull = 0
+# UVM_INFO tb/scoreboard.sv(37) @ 520: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           6 data = a5
+# UVM_INFO tb/scoreboard.sv(50) @ 520: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           6, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=a5, tr.wdata=a5
+# UVM_INFO tb/scoreboard.sv(37) @ 524: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           7 data = a5
+# UVM_INFO tb/scoreboard.sv(50) @ 524: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           7, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=a5, tr.wdata=a5
+#                  524 Finish trasaction.....
+# UVM_INFO tb/driver.sv(78) @ 524: uvm_test_top.env_h.agent_h.driver_h [Driver]  74 Prepare FIFO for writing
+#                  532 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 532: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           8 data = 4a
+# UVM_INFO tb/scoreboard.sv(50) @ 532: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           8, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=4a, tr.wdata=4a
+# UVM_INFO tb/driver.sv(78) @ 532: uvm_test_top.env_h.agent_h.driver_h [Driver] 171 Prepare FIFO for writing
+#                  540 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 540: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           9 data = ab
+# UVM_INFO tb/scoreboard.sv(50) @ 540: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           9, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=ab, tr.wdata=ab
+# UVM_INFO tb/driver.sv(78) @ 540: uvm_test_top.env_h.agent_h.driver_h [Driver] 243 Prepare FIFO for writing
+#                  548 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 548: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          10 data = f3
+# UVM_INFO tb/scoreboard.sv(50) @ 548: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          10, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=f3, tr.wdata=f3
+# Last Data
+# UVM_INFO tb/driver.sv(78) @ 548: uvm_test_top.env_h.agent_h.driver_h [Driver] 243 Prepare FIFO for writing
+#                  556 Finish trasaction.....
+#                  556:monitor FIFO not writing
+# RESET in effect......
+#                  556 : Driver Running Reset... 
+#                  583 : Driver Finish Running Reset...
+#                  583 Finish trasaction.....
+# UVM_INFO tb/driver.sv(84) @ 583: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  588:monitor FIFO not writing
+#                  591 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 000000000000024f, rempty = 101101110
+# UVM_INFO tb/scoreboard.sv(69) @ 591: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =          10, data= b7
+# UVM_INFO tb/scoreboard.sv(88) @ 591: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = b7 read data = b7
+# UVM_INFO tb/driver.sv(84) @ 591: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  607 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 000000000000025f, rempty = 100100010
+# UVM_INFO tb/scoreboard.sv(69) @ 607: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           9, data= 91
+# UVM_INFO tb/scoreboard.sv(88) @ 607: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 91 read data = 91
+# UVM_INFO tb/driver.sv(84) @ 607: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  623 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 000000000000026f, rempty = 111011010
+# UVM_INFO tb/scoreboard.sv(69) @ 623: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           8, data= ed
+# UVM_INFO tb/scoreboard.sv(88) @ 623: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = ed read data = ed
+# UVM_INFO tb/driver.sv(84) @ 623: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  639 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 000000000000027f, rempty = 111100110
+# UVM_INFO tb/scoreboard.sv(69) @ 639: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           7, data= f3
+# UVM_INFO tb/scoreboard.sv(88) @ 639: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = f3 read data = f3
+# UVM_INFO tb/driver.sv(84) @ 639: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  655 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 000000000000028f, rempty = 101111100
+# UVM_INFO tb/scoreboard.sv(69) @ 655: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           6, data= be
+# UVM_INFO tb/scoreboard.sv(88) @ 655: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = be read data = be
+# UVM_INFO tb/driver.sv(84) @ 655: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  671 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 000000000000029f, rempty = 011010110
+# UVM_INFO tb/scoreboard.sv(69) @ 671: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           5, data= 6b
+# UVM_ERROR tb/scoreboard.sv(91) @ 671: uvm_test_top.env_h.scoreboard_h [scoreboard] read data not matched with write data
+# UVM_INFO tb/driver.sv(84) @ 671: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  687 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000002af, rempty = 101001010
+# UVM_INFO tb/scoreboard.sv(69) @ 687: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           4, data= a5
+# UVM_INFO tb/scoreboard.sv(88) @ 687: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = a5 read data = a5
+# UVM_INFO tb/driver.sv(84) @ 687: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  703 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000002bf, rempty = 010010100
+# UVM_INFO tb/scoreboard.sv(69) @ 703: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           3, data= 4a
+# UVM_INFO tb/scoreboard.sv(88) @ 703: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 4a read data = 4a
+# UVM_INFO tb/driver.sv(84) @ 703: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  719 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000002cf, rempty = 101010110
+# UVM_INFO tb/scoreboard.sv(69) @ 719: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           2, data= ab
+# UVM_INFO tb/scoreboard.sv(88) @ 719: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = ab read data = ab
+# UVM_INFO tb/driver.sv(84) @ 719: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  735 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000002df, rempty = 111100110
+# UVM_INFO tb/scoreboard.sv(69) @ 735: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           1, data= f3
+# UVM_INFO tb/scoreboard.sv(88) @ 735: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = f3 read data = f3
+# UVM_INFO tb/driver.sv(84) @ 735: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  751 Finish trasaction.....
+# $t FIFO not reading                 751
+# wperiod           4 rperiod           6
+# UVM_INFO tb/driver.sv(51) @ 751: uvm_test_top.env_h.agent_h.driver_h [Driver] wperiod =           4, rperiod=           6
+#                  751 : Driver Running Reset... 
+#                  771 : Driver Finish Running Reset...
+#                  771 Finish trasaction.....
+# UVM_INFO tb/writeSeq.sv(29) @ 771: uvm_test_top.env_h.agent_h.sequencer_h@@wr [WRITESEQ]                  771, write sequence : Number of writes =          10
+# RESET in effect......
+#                  771 : Driver Running Reset... 
+#                  772:monitor FIFO not writing
+# $t FIFO not reading                 777
+#                  795 : Driver Finish Running Reset...
+#                  795 Finish trasaction.....
+# UVM_INFO tb/driver.sv(78) @ 795: uvm_test_top.env_h.agent_h.driver_h [Driver] 144 Prepare FIFO for writing
+#                  796 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 796: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           1 data = 90
+# UVM_INFO tb/scoreboard.sv(50) @ 796: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           1, fifo size =          16
 # scoreboard: Transaction copied: tr_cp.wdata=90, tr.wdata=90
-# UVM_INFO tb/driver.sv(78) @ 260: uvm_test_top.env_h.agent_h.driver_h [Driver]  54 Prepare FIFO for writing
-#                  276 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 276: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          13 data = 36
-# UVM_INFO tb/scoreboard.sv(50) @ 276: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          13, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=36, tr.wdata=36
-# UVM_INFO tb/driver.sv(78) @ 276: uvm_test_top.env_h.agent_h.driver_h [Driver]  34 Prepare FIFO for writing
-#                  292 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 292: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          14 data = 22
-# UVM_INFO tb/scoreboard.sv(50) @ 292: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          14, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=22, tr.wdata=22
-# UVM_INFO tb/driver.sv(78) @ 292: uvm_test_top.env_h.agent_h.driver_h [Driver] 213 Prepare FIFO for writing
-#                  308 Finish trasaction.....
-# UVM_INFO tb/scoreboard.sv(37) @ 308: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          15 data = d5
-# UVM_INFO tb/scoreboard.sv(50) @ 308: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          15, fifo size =          16
-# scoreboard: Transaction copied: tr_cp.wdata=d5, tr.wdata=d5
-# UVM_INFO tb/driver.sv(78) @ 308: uvm_test_top.env_h.agent_h.driver_h [Driver]  38 Prepare FIFO for writing
-#                  324 Finish trasaction.....
-#                  324 FIFO is full, write count == DEPTH =          16
-# UVM_INFO tb/driver.sv(78) @ 324: uvm_test_top.env_h.agent_h.driver_h [Driver] 126 Prepare FIFO for writing
-#                  332 wfull = 1
-# UVM_INFO tb/scoreboard.sv(37) @ 332: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          16 data = 7e
-# UVM_INFO tb/scoreboard.sv(40) @ 332: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO full checking wfull = 1
-# UVM_INFO tb/scoreboard.sv(46) @ 332: uvm_test_top.env_h.scoreboard_h [scoreboard] ***PASS**** FIFO wfull signal functions
-# scoreboard: Transaction copied: tr_cp.wdata=7e, tr.wdata=7e
-# UVM_INFO tb/scoreboard.sv(37) @ 340: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          17 data = 7e
-# UVM_INFO tb/scoreboard.sv(40) @ 340: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO full checking wfull = 1
-# UVM_INFO tb/scoreboard.sv(46) @ 340: uvm_test_top.env_h.scoreboard_h [scoreboard] ***PASS**** FIFO wfull signal functions
-# UVM_WARNING tb/scoreboard.sv(62) @ 340: uvm_test_top.env_h.scoreboard_h [SB] Could not put transaction in wroteDataFifo
-#                  340 Finish trasaction.....
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 340: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO tb/driver.sv(78) @ 796: uvm_test_top.env_h.agent_h.driver_h [Driver]  24 Prepare FIFO for writing
+# $t FIFO not reading                 801
+#                  804 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 804: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           2 data = 18
+# UVM_INFO tb/scoreboard.sv(50) @ 804: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           2, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=18, tr.wdata=18
+# UVM_INFO tb/driver.sv(78) @ 804: uvm_test_top.env_h.agent_h.driver_h [Driver] 102 Prepare FIFO for writing
+#                  812 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 812: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           3 data = 66
+# UVM_INFO tb/scoreboard.sv(50) @ 812: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           3, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=66, tr.wdata=66
+# UVM_INFO tb/driver.sv(78) @ 812: uvm_test_top.env_h.agent_h.driver_h [Driver] 157 Prepare FIFO for writing
+#                  820 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 820: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           4 data = 9d
+# UVM_INFO tb/scoreboard.sv(50) @ 820: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           4, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=9d, tr.wdata=9d
+# UVM_INFO tb/driver.sv(78) @ 820: uvm_test_top.env_h.agent_h.driver_h [Driver]  43 Prepare FIFO for writing
+#                  828 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 828: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           5 data = 2b
+# UVM_INFO tb/scoreboard.sv(50) @ 828: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           5, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=2b, tr.wdata=2b
+# UVM_INFO tb/driver.sv(78) @ 828: uvm_test_top.env_h.agent_h.driver_h [Driver] 229 Prepare FIFO for writing
+#                  836 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 836: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           6 data = e5
+# UVM_INFO tb/scoreboard.sv(50) @ 836: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           6, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=e5, tr.wdata=e5
+# UVM_INFO tb/driver.sv(78) @ 836: uvm_test_top.env_h.agent_h.driver_h [Driver] 226 Prepare FIFO for writing
+#                  844 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 844: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           7 data = e2
+# UVM_INFO tb/scoreboard.sv(50) @ 844: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           7, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=e2, tr.wdata=e2
+# UVM_INFO tb/driver.sv(78) @ 844: uvm_test_top.env_h.agent_h.driver_h [Driver] 229 Prepare FIFO for writing
+#                  852 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 852: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           8 data = e5
+# UVM_INFO tb/scoreboard.sv(50) @ 852: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           8, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=e5, tr.wdata=e5
+# UVM_INFO tb/driver.sv(78) @ 852: uvm_test_top.env_h.agent_h.driver_h [Driver] 175 Prepare FIFO for writing
+#                  860 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 860: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =           9 data = af
+# UVM_INFO tb/scoreboard.sv(50) @ 860: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =           9, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=af, tr.wdata=af
+# UVM_INFO tb/driver.sv(78) @ 860: uvm_test_top.env_h.agent_h.driver_h [Driver]   5 Prepare FIFO for writing
+#                  868 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 868: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          10 data = 05
+# UVM_INFO tb/scoreboard.sv(50) @ 868: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          10, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=05, tr.wdata=05
+# Last Data
+# UVM_INFO tb/driver.sv(78) @ 868: uvm_test_top.env_h.agent_h.driver_h [Driver]   5 Prepare FIFO for writing
+#                  876 Finish trasaction.....
+#                  876:monitor FIFO not writing
+# RESET in effect......
+#                  876 : Driver Running Reset... 
+#                  903 : Driver Finish Running Reset...
+#                  903 Finish trasaction.....
+# UVM_INFO tb/driver.sv(84) @ 903: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  908:monitor FIFO not writing
+#                  909 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 000000000000038d, rempty = 100100000
+# UVM_INFO tb/scoreboard.sv(69) @ 909: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =          10, data= 90
+# UVM_INFO tb/scoreboard.sv(88) @ 909: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 90 read data = 90
+# UVM_INFO tb/driver.sv(84) @ 909: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  921 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 0000000000000399, rempty = 000110000
+# UVM_INFO tb/scoreboard.sv(69) @ 921: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           9, data= 18
+# UVM_INFO tb/scoreboard.sv(88) @ 921: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 18 read data = 18
+# UVM_INFO tb/driver.sv(84) @ 921: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  933 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000003a5, rempty = 011001100
+# UVM_INFO tb/scoreboard.sv(69) @ 933: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           8, data= 66
+# UVM_INFO tb/scoreboard.sv(88) @ 933: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 66 read data = 66
+# UVM_INFO tb/driver.sv(84) @ 933: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  945 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000003b1, rempty = 100111010
+# UVM_INFO tb/scoreboard.sv(69) @ 945: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           7, data= 9d
+# UVM_INFO tb/scoreboard.sv(88) @ 945: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 9d read data = 9d
+# UVM_INFO tb/driver.sv(84) @ 945: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  957 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000003bd, rempty = 001010110
+# UVM_INFO tb/scoreboard.sv(69) @ 957: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           6, data= 2b
+# UVM_INFO tb/scoreboard.sv(88) @ 957: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 2b read data = 2b
+# UVM_INFO tb/driver.sv(84) @ 957: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  969 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000003c9, rempty = 111001010
+# UVM_INFO tb/scoreboard.sv(69) @ 969: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           5, data= e5
+# UVM_INFO tb/scoreboard.sv(88) @ 969: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = e5 read data = e5
+# UVM_INFO tb/driver.sv(84) @ 969: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  981 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000003d5, rempty = 111000100
+# UVM_INFO tb/scoreboard.sv(69) @ 981: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           4, data= e2
+# UVM_INFO tb/scoreboard.sv(88) @ 981: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = e2 read data = e2
+# UVM_INFO tb/driver.sv(84) @ 981: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                  993 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000003e1, rempty = 111001010
+# UVM_INFO tb/scoreboard.sv(69) @ 993: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           3, data= e5
+# UVM_INFO tb/scoreboard.sv(88) @ 993: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = e5 read data = e5
+# UVM_INFO tb/driver.sv(84) @ 993: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                 1005 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000003ed, rempty = 101011110
+# UVM_INFO tb/scoreboard.sv(69) @ 1005: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           2, data= af
+# UVM_INFO tb/scoreboard.sv(88) @ 1005: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = af read data = af
+# UVM_INFO tb/driver.sv(84) @ 1005: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                 1017 Finish trasaction.....
+# $t: reading data, transactions and sending: rdata = 00000000000003f9, rempty = 000001010
+# UVM_INFO tb/scoreboard.sv(69) @ 1017: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform Read : # of writes =           1, data= 05
+# UVM_INFO tb/scoreboard.sv(88) @ 1017: uvm_test_top.env_h.scoreboard_h [scoreboard] wdata = 05 read data = 05
+# UVM_INFO tb/driver.sv(84) @ 1017: uvm_test_top.env_h.agent_h.driver_h [Driver]   x Prepare FIFO for Reading
+#                 1029 Finish trasaction.....
+# $t FIFO not reading                1029
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 1029: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   58
-# UVM_WARNING :    1
-# UVM_ERROR :    0
+# UVM_INFO :  195
+# UVM_WARNING :    0
+# UVM_ERROR :    1
 # UVM_FATAL :    0
 # ** Report counts by id
-# [Driver]    18
+# [Driver]    69
 # [Questa UVM]     2
 # [RNTST]     1
-# [SB]     1
 # [TEST_DONE]     1
-# [scoreboard]    36
+# [WRITESEQ]     3
+# [scoreboard]   120
 # ** Note: $finish    : /usr/caen/modelsim-10.5c/modeltech/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 340 ns  Iteration: 61  Instance: /top
+#    Time: 1029 ns  Iteration: 61  Instance: /top
 # 1
 # Break in Task uvm_pkg/uvm_root::run_test at /usr/caen/modelsim-10.5c/modeltech/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
 # Stopped at /usr/caen/modelsim-10.5c/modeltech/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
-# End time: 12:56:00 on Aug 18,2017, Elapsed time: 0:00:02
+# End time: 14:20:37 on Aug 18,2017, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
