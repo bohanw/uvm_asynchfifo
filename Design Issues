@@ -1,0 +1,12 @@
+Design Issues
+
+	-> Switch from fifo1 to fifo2 design
+		compare full / empty asynchrously
+
+	-> Binary cnt vs Graycode cnt?
+
+	-> more stages of synchronizer design?
+
+	-> Synthesize and run sim
+
+	-> Run STA

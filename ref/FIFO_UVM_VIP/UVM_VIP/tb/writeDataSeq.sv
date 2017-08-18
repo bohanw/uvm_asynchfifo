@@ -38,7 +38,7 @@
 class writeDataSeq extends uvm_sequence #(seqItem);
 `uvm_object_utils(writeDataSeq)
 
-//seqItem seqreq;
+seqItem seqreq;
 //resetSequence rstSeq;
 
 rand int numberOfWrites;
@@ -53,8 +53,8 @@ task body();
 
 req = seqItem::type_id::create("seqreq");
 $display("%t: ++++++++++++ writeDataSeq: Number of writes= %d", $time, numberOfWrites);
- 
-  repeat (numberOfWrites)
+
+  repeat (10)
    begin
 	start_item(req);
 		req.randomize();		

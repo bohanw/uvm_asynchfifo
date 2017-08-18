@@ -10,6 +10,12 @@ interface fifo_interface #(parameter DATASIZE = 8);
 
 	int wperiod = 4;
 	int rperiod = 5;
+
+	modport TB (input rdata, wfull, rempty,
+		output wdata, winc, wclk, wrst_n,rinc, rclk, rrst_n );
+
+	modport DUT (output rdata, wfull, rempty,
+		input wdata, winc, wclk, wrst_n,rinc, rclk, rrst_n );
 	initial begin
 		wclk = 0;
 		forever begin

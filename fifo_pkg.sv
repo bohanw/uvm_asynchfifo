@@ -17,15 +17,17 @@ package fifo_pkg;
 	`include "sequence_item.sv"
 //	`include "clkSeqItem.sv"
 	`include "clkSeq.sv"
+	`include "resetSeq.sv"
 	`include "writeSeq.sv"
+	`include "writeFullSeq.sv"
 	`include "sequencer.sv"
 	`include "driver.sv"
-`include "wr_monitor.sv"
+	`include "wr_monitor.sv"
 	`include "rd_monitor.sv"
 
 	`include "agent.sv"
 	`include "scoreboard.sv"
 	`include "env.sv"
 	`include "writeTest.sv"
-
+	`include "writeFullTest.sv"
 endpackage

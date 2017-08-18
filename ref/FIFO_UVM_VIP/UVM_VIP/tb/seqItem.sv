@@ -46,6 +46,8 @@ logic winc, wrst_n;
 logic rinc, rrst_n;
 
 fifoVerif_pkg::operation op;
+constraint wdata_cons {wdata > 8'd0;
+					wdata < 8'd10;};
 
 function new (string name="seqItem");
 	super.new(name);

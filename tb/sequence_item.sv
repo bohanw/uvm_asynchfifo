@@ -9,7 +9,7 @@ class sequence_item extends uvm_sequence_item;
 
 	logic winc,rinc,wrst_n,rrst_n;
 
-	
+
 	constraint data { 
 		wdata dist {
 			8'h00:=1,

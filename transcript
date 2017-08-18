@@ -1,6 +1,6 @@
 # do run.do
 # Model Technology ModelSim SE-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
-# Start time: 18:55:10 on Aug 07,2017
+# Start time: 12:55:50 on Aug 18,2017
 # vlog -f dut.f 
 # -- Compiling module fifomem
 # -- Compiling module sync_r2w
@@ -12,10 +12,10 @@
 # 
 # Top level modules:
 # 	fifo
-# End time: 18:55:10 on Aug 07,2017, Elapsed time: 0:00:00
+# End time: 12:55:50 on Aug 18,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
-# Start time: 18:55:10 on Aug 07,2017
+# Start time: 12:55:50 on Aug 18,2017
 # vlog -f tb.f 
 # -- Compiling package fifo_pkg
 # ** Note: (vlog-2286) fifo_pkg.sv(2): Using implicit +incdir+/usr/caen/modelsim-10.5c/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
@@ -26,10 +26,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 18:55:11 on Aug 07,2017, Elapsed time: 0:00:01
+# End time: 12:55:51 on Aug 18,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vopt 10.5c Compiler 2016.07 Jul 20 2016
-# Start time: 18:55:11 on Aug 07,2017
+# Start time: 12:55:51 on Aug 18,2017
 # vopt top -o top_optimized "+acc" "+cover=sbfec+fifo(rtl)." 
 # 
 # Top level modules:
@@ -63,11 +63,11 @@
 # -- Optimizing package fifo_pkg(fast)
 # -- Optimizing interface fifo_interface(fast)
 # Optimized design name is top_optimized
-# End time: 18:55:18 on Aug 07,2017, Elapsed time: 0:00:07
+# End time: 12:55:58 on Aug 18,2017, Elapsed time: 0:00:07
 # Errors: 0, Warnings: 0
-# vsim top_optimized -coverage "+UVM_TESTNAME=writeTest" 
-# Start time: 18:55:18 on Aug 07,2017
-# //  ModelSim SE-64 10.5c Jul 20 2016Linux 3.10.0-514.21.2.el7.x86_64
+# vsim top_optimized -coverage "+UVM_TESTNAME=writeFullTest" 
+# Start time: 12:55:58 on Aug 18,2017
+# //  ModelSim SE-64 10.5c Jul 20 2016Linux 3.10.0-693.el7.x86_64
 # //
 # //  Copyright 1991-2016 Mentor Graphics Corporation
 # //  All Rights Reserved.
@@ -118,7 +118,7 @@
 # 
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
-# UVM_INFO @ 0: reporter [RNTST] Running test writeTest...
+# UVM_INFO @ 0: reporter [RNTST] Running test writeFullTest...
 # wperiod           8 rperiod           5
 # UVM_INFO tb/driver.sv(51) @ 0: uvm_test_top.env_h.agent_h.driver_h [Driver] wperiod =           8, rperiod=           5
 #                    0 : Driver Running Reset... 
@@ -126,7 +126,6 @@
 # $t FIFO not reading                   5
 #                   30 : Driver Finish Running Reset...
 #                   30 Finish trasaction.....
-# UVM_INFO tb/writeSeq.sv(24) @ 30: uvm_test_top.env_h.agent_h.sequencer_h@@writeSeq_h [WRITESEQ]                   30, write sequence : Number of writes =           0
 # RESET in effect......
 #                   30 : Driver Running Reset... 
 # $t FIFO not reading                  35
@@ -184,30 +183,65 @@
 # UVM_INFO tb/scoreboard.sv(37) @ 228: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          10 data = 38
 # UVM_INFO tb/scoreboard.sv(50) @ 228: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          10, fifo size =          16
 # scoreboard: Transaction copied: tr_cp.wdata=38, tr.wdata=38
-# Last Data
-# UVM_INFO tb/driver.sv(78) @ 228: uvm_test_top.env_h.agent_h.driver_h [Driver]  56 Prepare FIFO for writing
+# UVM_INFO tb/driver.sv(78) @ 228: uvm_test_top.env_h.agent_h.driver_h [Driver]  33 Prepare FIFO for writing
 #                  244 Finish trasaction.....
-#                  244:monitor FIFO not writing
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 244: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO tb/scoreboard.sv(37) @ 244: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          11 data = 21
+# UVM_INFO tb/scoreboard.sv(50) @ 244: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          11, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=21, tr.wdata=21
+# UVM_INFO tb/driver.sv(78) @ 244: uvm_test_top.env_h.agent_h.driver_h [Driver] 144 Prepare FIFO for writing
+#                  260 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 260: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          12 data = 90
+# UVM_INFO tb/scoreboard.sv(50) @ 260: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          12, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=90, tr.wdata=90
+# UVM_INFO tb/driver.sv(78) @ 260: uvm_test_top.env_h.agent_h.driver_h [Driver]  54 Prepare FIFO for writing
+#                  276 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 276: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          13 data = 36
+# UVM_INFO tb/scoreboard.sv(50) @ 276: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          13, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=36, tr.wdata=36
+# UVM_INFO tb/driver.sv(78) @ 276: uvm_test_top.env_h.agent_h.driver_h [Driver]  34 Prepare FIFO for writing
+#                  292 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 292: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          14 data = 22
+# UVM_INFO tb/scoreboard.sv(50) @ 292: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          14, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=22, tr.wdata=22
+# UVM_INFO tb/driver.sv(78) @ 292: uvm_test_top.env_h.agent_h.driver_h [Driver] 213 Prepare FIFO for writing
+#                  308 Finish trasaction.....
+# UVM_INFO tb/scoreboard.sv(37) @ 308: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          15 data = d5
+# UVM_INFO tb/scoreboard.sv(50) @ 308: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO write status: write performed =          15, fifo size =          16
+# scoreboard: Transaction copied: tr_cp.wdata=d5, tr.wdata=d5
+# UVM_INFO tb/driver.sv(78) @ 308: uvm_test_top.env_h.agent_h.driver_h [Driver]  38 Prepare FIFO for writing
+#                  324 Finish trasaction.....
+#                  324 FIFO is full, write count == DEPTH =          16
+# UVM_INFO tb/driver.sv(78) @ 324: uvm_test_top.env_h.agent_h.driver_h [Driver] 126 Prepare FIFO for writing
+#                  332 wfull = 1
+# UVM_INFO tb/scoreboard.sv(37) @ 332: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          16 data = 7e
+# UVM_INFO tb/scoreboard.sv(40) @ 332: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO full checking wfull = 1
+# UVM_INFO tb/scoreboard.sv(46) @ 332: uvm_test_top.env_h.scoreboard_h [scoreboard] ***PASS**** FIFO wfull signal functions
+# scoreboard: Transaction copied: tr_cp.wdata=7e, tr.wdata=7e
+# UVM_INFO tb/scoreboard.sv(37) @ 340: uvm_test_top.env_h.scoreboard_h [scoreboard] Perform write # of writes =          17 data = 7e
+# UVM_INFO tb/scoreboard.sv(40) @ 340: uvm_test_top.env_h.scoreboard_h [scoreboard] FIFO full checking wfull = 1
+# UVM_INFO tb/scoreboard.sv(46) @ 340: uvm_test_top.env_h.scoreboard_h [scoreboard] ***PASS**** FIFO wfull signal functions
+# UVM_WARNING tb/scoreboard.sv(62) @ 340: uvm_test_top.env_h.scoreboard_h [SB] Could not put transaction in wroteDataFifo
+#                  340 Finish trasaction.....
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 340: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   37
-# UVM_WARNING :    0
+# UVM_INFO :   58
+# UVM_WARNING :    1
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
-# [Driver]    12
+# [Driver]    18
 # [Questa UVM]     2
 # [RNTST]     1
+# [SB]     1
 # [TEST_DONE]     1
-# [WRITESEQ]     1
-# [scoreboard]    20
+# [scoreboard]    36
 # ** Note: $finish    : /usr/caen/modelsim-10.5c/modeltech/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 244 ns  Iteration: 61  Instance: /top
+#    Time: 340 ns  Iteration: 61  Instance: /top
 # 1
 # Break in Task uvm_pkg/uvm_root::run_test at /usr/caen/modelsim-10.5c/modeltech/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
 # Stopped at /usr/caen/modelsim-10.5c/modeltech/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
-# End time: 18:55:20 on Aug 07,2017, Elapsed time: 0:00:02
+# End time: 12:56:00 on Aug 18,2017, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0

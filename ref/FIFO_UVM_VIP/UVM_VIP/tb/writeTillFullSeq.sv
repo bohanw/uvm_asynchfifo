@@ -55,7 +55,7 @@ rstSeq = resetSequence::type_id::create("rstSeq");
 
  writeSeq.constraint_mode(0);
  writeSeq.randomize() with {
-	numberOfWrites == fifo_DEPTH+1;
+	numberOfWrites == fifo_DEPTH + 2;
 };
 writeSeq.start(m_sequencer, this);
 

@@ -1,0 +1,43 @@
+Test scenario
+
+	write test: done
+	read test
+	write until full signal is asserted: 
+		TB should report # of writes, time and cycle when full asserted
+		reject further writing
+	read until empty: 
+		TB should report # of reads, empty signal and reject further reading
+
+	simultaneously write and read
+		TB should report wptr and rptr, and compare if data are matched
+		randomize clk, different clk vs same clk
+
+
+	full and empty mutually exclusive:
+
+
+	full and empty assert at the same time: deactivate rclk and keep writing until full
+
+
+	***************************************************************************************
+	Reset behavior
+
+		-> Initial Reset
+
+
+		-> Reset while writing
+			TB reports wptr and full signal, as well as data
+		-> Reset while reading
+			TB reports rptr and read signal while reset asserted
+
+
+Constraint-driven random test
+
+	1. Random wclk / rclk ratio
+
+	2. Random data
+
+	3. Random 
+
+
+Coverage report: 

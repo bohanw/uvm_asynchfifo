@@ -5,7 +5,7 @@ vlog -f dut.f
 vlog -f tb.f
 
 vopt top -o top_optimized +acc +cover=sbfec+fifo(rtl).
-vsim top_optimized -coverage +UVM_TESTNAME=writeTest 
+vsim top_optimized -coverage +UVM_TESTNAME=writeFullTest 
 set NoQuitOnFinish 1
 onbreak {resume}
 log /* -r

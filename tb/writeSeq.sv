@@ -2,30 +2,36 @@
 class writeSeq extends uvm_sequence #(sequence_item);
 	`uvm_object_utils(writeSeq)
 
-	rand int writeCount;
+
 	sequence_item command;
+											 //upperboundary as DATASIZE
+		int fifo_depth;											 //param
 
-	constraint writeCountCnstr {
-		writeCount > 1;
-		writeCount < 8;
-	}; // How to pass the writeCount
-												 //upperboundary as DATASIZE
-												 //param
+	rand int wrCnt;
+	constraint numWr
+	 	{
+	 	wrCnt <  15;
+	 };
+	int writeCount;
 
-	function new (string name="");
+	function new (string name="writeSeq");
 		super.new(name);
-
+		this.writeCount =0;
+		if(!uvm_config_db#(int)::get(null, "*", "DEPTH",fifo_depth ))
+			`uvm_error("writeseq","FAIL TO GET DEPTH");
 	endfunction
 
 	task body();
 		command = sequence_item::type_id::create("command");
 		//$display("%t: ++++++++++++ writeDataSeq: Number of writes= %d",
 		//$time,writeCount);
+		writeCount = 10;
 		`uvm_info("WRITESEQ",$sformatf("%t, write sequence : Number of writes = %d",$time, writeCount),UVM_MEDIUM);
 		start_item(command);
 		command.op = RESET;
+
 		finish_item(command);
-		repeat(10) begin
+		repeat (writeCount) begin
 			start_item(command);
 			void' (command.randomize());
 			command.op = WRITE;
