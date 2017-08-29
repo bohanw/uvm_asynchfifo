@@ -10,21 +10,23 @@ class clkSeqItem extends uvm_sequence_item;
 	
 	constraint period {
 		wperiod dist {
-			4:=1,
-			6:=1,
-			8:=1
+			2:=1,
+			4:=0,
+			6:=0,
+			8:=0
 		};
 		rperiod dist {
-			4:=1,
-			6:=1,
+			2:=0,
+			4:=0,
+			6:=0,
 			8:=1
 
 		};
 	}; 
 
-		function new (string name="clkSeqItem");
-			super.new(name);
-		endfunction : new	
+	function new (string name="clkSeqItem");
+		super.new(name);
+	endfunction : new	
 
 endclass
 

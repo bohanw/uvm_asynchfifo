@@ -12,6 +12,7 @@ class resetSeq extends uvm_sequence #(sequence_item);
 
 		start_item(command);
 		command.op = RESET;
+		
 		finish_item(command);
 
 	endtask : body

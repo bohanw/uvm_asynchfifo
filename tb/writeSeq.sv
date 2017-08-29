@@ -7,11 +7,6 @@ class writeSeq extends uvm_sequence #(sequence_item);
 											 //upperboundary as DATASIZE
 		int fifo_depth;											 //param
 
-	rand int wrCnt;
-	constraint numWr
-	 	{
-	 	wrCnt <  15;
-	 };
 	int writeCount;
 
 	function new (string name="writeSeq");
@@ -29,7 +24,8 @@ class writeSeq extends uvm_sequence #(sequence_item);
 		`uvm_info("WRITESEQ",$sformatf("%t, write sequence : Number of writes = %d",$time, writeCount),UVM_MEDIUM);
 		start_item(command);
 		command.op = RESET;
-
+		command.winc = 0;
+		command.rinc = 0;
 		finish_item(command);
 		repeat (writeCount) begin
 			start_item(command);

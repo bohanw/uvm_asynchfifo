@@ -70,30 +70,41 @@ class driver extends uvm_driver #(uvm_sequence_item);
 			end
 			WRITE: begin
 
-
+				//@(negedge itf.wclk);
 				this.writeCount++;
 				itf.wdata <= seqItem.wdata;
 				itf.winc <= seqItem.winc;
 				itf.rinc <= 0;
-				`uvm_info("Driver",$sformatf("%d Prepare FIFO for writing", seqItem.wdata),UVM_LOW);
 				@ (posedge itf.wclk);
+				`uvm_info("Driver",$sformatf("%d Prepare FIFO for writing", seqItem.wdata),UVM_LOW);
+
 	
 			end
 			READ:begin
+				//@(negedge itf.rclk);
 				this.readCount++;
-				`uvm_info("Driver",$sformatf("%d Prepare FIFO for Reading", seqItem.rdata),UVM_LOW);
-				itf.winc = 0;
-				itf.rinc = seqItem.rinc;
+				itf.rinc <= seqItem.rinc;
 				@(posedge itf.rclk);
+				`uvm_info("Driver",$sformatf("%d Prepare FIFO for Reading", seqItem.rdata),UVM_LOW);
+
 
 			end
 			WRITEREAD: begin
+				@(negedge itf.wclk);
+				itf.winc <= seqItem.winc;
 				this.writeCount++;
+				//`uvm_info("Driver",$sformatf("%d FIFO Reading %h Writing %h", $time, seqItem.rdata,seqItem.wdata),UVM_LOW);
+				itf.wdata <= seqItem.wdata;
+				
+				//@(negedge itf.rclk);
+				itf.rinc <= seqItem.rinc;
 				this.readCount++;
-				`uvm_info("Driver",$sformatf("%d FIFO Reading %h Writing %h", $time, seqItem.rdata,seqItem.wdata),UVM_LOW);
-				itf.wdata = seqItem.wdata;
-				itf.winc = seqItem.winc;
-				itf.rinc = seqItem.rinc;
+
+				@(posedge itf.rclk);
+				`uvm_info("Driver",$sformatf("%d Prepare FIFO for writing", seqItem.wdata),UVM_LOW);
+				@(posedge itf.rclk);
+				`uvm_info("Driver",$sformatf("%d Prepare FIFO for Reading", seqItem.rdata),UVM_LOW);
+
 			end
 			default: begin
 
