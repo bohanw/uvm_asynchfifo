@@ -10,16 +10,17 @@ class clkSeqItem extends uvm_sequence_item;
 	
 	constraint period {
 		wperiod dist {
-			2:=1,
+			2:=0,
 			4:=0,
-			6:=0,
+			6:=1,
 			8:=0
 		};
 		rperiod dist {
 			2:=0,
 			4:=0,
 			6:=0,
-			8:=1
+			8:=1,
+			rperiod < wperiod
 
 		};
 	}; 

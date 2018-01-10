@@ -12,6 +12,8 @@ class driver extends uvm_driver #(uvm_sequence_item);
 	int writeCount;
 	int readCount;
 
+	int cyclecnt, n_cyclecnt;
+
 	function new (string name, uvm_component parent);
 		super.new(name,parent);
 	endfunction
@@ -24,25 +26,41 @@ class driver extends uvm_driver #(uvm_sequence_item);
 	//reset phase of the RUN PHASE
 	task reset (uvm_phase phase);
 		//phase.raise_objection(this);
-		$display ("%t : Driver Running Reset... ", $time);
-		itf.wrst_n = 1'b0;
-		itf.rrst_n = 1'b0;
 
-		@(negedge itf.wclk);
-		@(negedge itf.rclk);
-		@(negedge itf.wclk);
-		@(negedge itf.rclk);
-		itf.wrst_n = 1;
-		itf.rrst_n = 1;
-		//phase.drop_objection(this);
-		$display ("%t : Driver Finish Running Reset...", $time);
+			fork
+				wr_reset();
+				rd_reset();
+			join
+
 	endtask
 
+	task wr_reset();
+		$display ("%t : Driver Running Wr Reset... ", $time);
+		itf.wrst_n = 1'b0;
+		@(negedge itf.wclk);
+		itf.wrst_n = 1'b1;
+		$display ("%t : Driver Finish Running Wr Reset...", $time);
+
+	endtask 
+	task rd_reset();
+		$display ("%t : Driver Running Rd Reset... ", $time);
+		itf.rrst_n = 1'b0;
+		@(negedge itf.rclk);
+		itf.rrst_n = 1'b1;
+		$display ("%t : Driver Finish Running Rd Reset...", $time);
+	endtask
 	task run_phase(uvm_phase phase);
 
 		//clkItem = clkSeqItem::type_id::create("clkItem");
 		//seqItem = sequence_item::type_id::create("seqItem");
 		
+		fork 
+			forever @(posedge itf.wclk) begin
+				if(cyclecnt == 3) cyclecnt <= 0;
+				else cyclecnt <= cyclecnt+1;
+			end
+		join_none
+
 		forever begin 
 			seq_item_port.get_next_item(req);
 			if($cast(clkItem,req)) begin
@@ -71,10 +89,12 @@ class driver extends uvm_driver #(uvm_sequence_item);
 			WRITE: begin
 
 				//@(negedge itf.wclk);
+				if(cyclecnt == 3) begin
 				this.writeCount++;
 				itf.wdata <= seqItem.wdata;
 				itf.winc <= seqItem.winc;
 				itf.rinc <= 0;
+				end
 				@ (posedge itf.wclk);
 				`uvm_info("Driver",$sformatf("%d Prepare FIFO for writing", seqItem.wdata),UVM_LOW);
 
@@ -89,6 +109,7 @@ class driver extends uvm_driver #(uvm_sequence_item);
 
 
 			end
+			//need revision
 			WRITEREAD: begin
 				@(negedge itf.wclk);
 				itf.winc <= seqItem.winc;

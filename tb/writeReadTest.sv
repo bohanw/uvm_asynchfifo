@@ -20,15 +20,15 @@ class writeReadTest extends uvm_test;
 		wr = writeSeq::type_id::create("wr");
 		rd = readSeq::type_id::create("rd");
 
-		repeat (3) begin
+		
 			clk.start(this.env_h.agent_h.sequencer_h);
-			wr.constraint_mode(0);
-			wr.writeCount = 10;
+			wr.constraint_mode(1);
+			wr.writeCount = 17;
 			wr.start(this.env_h.agent_h.sequencer_h);
 			rd.constraint_mode(0);
 			rd.totalReads = wr.writeCount;
 			rd.start(this.env_h.agent_h.sequencer_h);
-		end
+		
 
 		phase.drop_objection(this);
 

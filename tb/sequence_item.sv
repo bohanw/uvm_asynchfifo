@@ -12,7 +12,7 @@ class sequence_item extends uvm_sequence_item;
 
 	constraint data { 
 		wdata dist {
-			8'h00:=1,
+			8'h00:=10,
 			[8'h01:8'hFE]:=1,
 			8'hFF:=1
 		};
